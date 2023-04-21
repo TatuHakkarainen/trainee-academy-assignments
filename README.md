@@ -93,7 +93,86 @@ Call the printLargestTriangle function with the three triangle objects as input,
 printLargestTriangle(firstTriangle, secondTriangle, thirdTriangle)
 ```
 
-## **Assignment#2:Repetitive code**
+## **Assignment#2:Crades**
+
+We have the following list of students:
+```javascript
+const students = [ { name: "Sami", score: 24.75 },
+                   { name: "Heidi", score: 20.25 },
+                   { name: "Jyrki", score: 27.5 },
+                   { name: "Helinä", score: 26.0 },
+                   { name: "Maria", score: 17.0 },
+                   { name: "Yrjö", score: 14.5  } ];
+
+```
+Create a function getGrades that takes a list of students as a parameter and returns the students' grades in a new array.
+Scores are converted to grades in the following way:
+
+< 14.0 results in grade 0
+[14.0, 17.0] results in grade 1
+]17.0, 20.0] results in grade 2
+]20.0, 23.0] results in grade 3
+]23.0, 26.0] results in grade 4
+
+
+26.0 results in grade 5
+
+
+
+Note the inclusive/exclusive bounds! For example, the range [14.0, 17.0] includes both 14.0 and 17.0, while the range ]17.0, 20.0] excludes 17.0 (but includes everything that is just above 17.0, even 17.000001).
+
+Instead of returning only an array of grade numbers, return an array of new objects, where each object contains the student's name and their grade.
+
+### Solution
+
+1.The code defines an array called students with objects containing the name and score for each student.
+
+```javascript
+const students = [ { name: "Sami", score: 24.75 },
+                   { name: "Heidi", score: 20.25 },
+                   { name: "Jyrki", score: 27.5 },
+                   { name: "Helinä", score: 26.0 },
+                   { name: "Maria", score: 17.0 },
+                   { name: "Yrjö", score: 14.5  } ];
+```
+
+2.The getGrades function takes an array of student objects as its argument and returns a new array that maps each student to an object containing their name and grade.
+The function uses the Array.prototype.map() method to iterate over each student object in the input array.
+For each student object, the function calculates the student's grade based on their score using a series of conditional statements.
+The function creates a new object with the student's name and calculated grade, and returns this object to the new array that is being built by the map() method.
+Once the map() method has processed all of the student objects in the input array, it returns a new array of objects that contain each student's name and grade.
+
+```javascript
+function getGrades(studentArray) {
+    return studentArray.map(student => {
+        let grade;
+        if (student.score < 14.0) {
+            grade = 0;
+        } else if (student.score <= 17.0) {
+            grade = 1;
+        } else if (student.score <= 20.0) {
+            grade = 2;
+        } else if (student.score <= 23.0) {
+            grade = 3;
+        } else if (student.score < 26.0) {
+            grade = 4;
+        } else {
+            grade = 5;
+        }
+        return {name: student.name, grade:grade};
+    });
+}
+```
+
+3.The code calls the getGrades function with the students array as its argument, and stores the resulting array of objects in a variable called grades.
+Finally, the code prints the grades array to the console using the console.log() method.
+
+```javascript
+const grades = getGrades(students);
+console.log(grades);
+```
+
+So, when you run this code, you will see an array of objects in the console that contains the name and grade for each student, based on the grade calculation rules in the getGrades function.
 
 
 
