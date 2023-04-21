@@ -1,5 +1,5 @@
-# **trainee-academy-assignments**
-This repository showcases a few of my solutions to the assignments I have done in Trainee Academy. I have chosen three assignments that I thought were educational and interesting. They represent a variety of programming concepts we have learned and that I feel I am now using confidently.
+# **Exercise portfolio**
+This repository showcases a few of my solutions to the assignments I have done in Trainee Academy. I have chosen two assignments that I thought were educational and interesting. They represent a variety of programming concepts we have learned and that I feel I am now using confidently.
 Only the essential parts of the code are included in this document. The full executable versions can be found from this repository.
 
 ## **Assignment#1:Repetitive code**
@@ -125,7 +125,9 @@ Instead of returning only an array of grade numbers, return an array of new obje
 
 ### Solution
 
-1.The code defines an array called students with objects containing the name and score for each student.
+**1)**
+
+The code defines an array called students with objects containing the name and score for each student.
 
 ```javascript
 const students = [ { name: "Sami", score: 24.75 },
@@ -136,7 +138,9 @@ const students = [ { name: "Sami", score: 24.75 },
                    { name: "Yrjö", score: 14.5  } ];
 ```
 
-2.The getGrades function takes an array of student objects as its argument and returns a new array that maps each student to an object containing their name and grade.
+**2)**
+
+The getGrades function takes an array of student objects as its argument and returns a new array that maps each student to an object containing their name and grade.
 The function uses the Array.prototype.map() method to iterate over each student object in the input array.
 For each student object, the function calculates the student's grade based on their score using a series of conditional statements.
 The function creates a new object with the student's name and calculated grade, and returns this object to the new array that is being built by the map() method.
@@ -164,7 +168,9 @@ function getGrades(studentArray) {
 }
 ```
 
-3.The code calls the getGrades function with the students array as its argument, and stores the resulting array of objects in a variable called grades.
+**3)**
+
+The code calls the getGrades function with the students array as its argument, and stores the resulting array of objects in a variable called grades.
 Finally, the code prints the grades array to the console using the console.log() method.
 
 ```javascript
